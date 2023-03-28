@@ -6,12 +6,11 @@
 /*   By: mkocabas <mkocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 11:26:09 by mkocabas          #+#    #+#             */
-/*   Updated: 2023/03/27 14:59:34 by mkocabas         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:12:48 by mkocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/push_swap.h"
-
 
 static int	rule_p(t_node **stack_one, t_node **stack_two)
 {

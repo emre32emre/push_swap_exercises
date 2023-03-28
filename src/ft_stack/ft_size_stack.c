@@ -6,7 +6,7 @@
 /*   By: mkocabas <mkocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 13:01:42 by mkocabas          #+#    #+#             */
-/*   Updated: 2023/03/27 13:04:47 by mkocabas         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:12:26 by mkocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_stack_size(t_node *stack)
 {
-	int	size;
-	t_node *iter;
+	int		size;
+	t_node	*iter;
 
 	iter = stack;
 	size = 0;

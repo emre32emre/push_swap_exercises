@@ -4,7 +4,7 @@ LIBFT = ./lib/libft
 DIR_SRC = src
 DIR_OBJ = temp
 HEADERS = incl
-FLAGS = #-Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 LIBFTFLAGS = -L$(LIBFT) -lft
 
 SOURCES =	main.c \
@@ -22,7 +22,9 @@ SOURCES =	main.c \
 			sort/ft_sort_big.c \
 			sort/ft_sort_three.c \
 			sort/ft_rotate_type.c \
+			sort/ft_rotate_and_push.c \
 			sort/solver_utils_ab.c \
+			sort/solver_utils_ba.c \
 			rules/rule_s.c \
 			rules/rule_p.c \
 			rules/rule_r.c \
@@ -35,7 +37,8 @@ all: $(DIR_OBJ) $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(LIBFT)
-	$(CC) $(FLAGS) $(LIBFTFLAGS) -o $@ $^
+	@$(CC) $(FLAGS) $(LIBFTFLAGS) -o $@ $^
+	@echo derlendi.
 
 $(DIR_OBJ):
 	@mkdir -p temp

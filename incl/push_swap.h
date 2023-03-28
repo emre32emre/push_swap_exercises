@@ -6,19 +6,16 @@
 /*   By: mkocabas <mkocabas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 11:03:58 by mkocabas          #+#    #+#             */
-/*   Updated: 2023/03/27 16:22:24 by mkocabas         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:09:55 by mkocabas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-
-
 # include <stdlib.h>
 # include <unistd.h>
 # include "../lib/libft/libft.h"
-
 
 typedef struct s_node
 {
@@ -27,21 +24,28 @@ typedef struct s_node
 	struct s_node	*next;
 }t_node;
 
-#define log write(1,"aq\n",3);
-#define DEBUG 1
+# define DEBUG 1
 
-#define SA &stack_a
-#define SB &stack_b
-#define SS &stack_a, &stack_b
-#define XSS stack_a, stack_b
-
+void	init_stack(t_node **stack_a, char **argv, int argc);
 
 /***      SORT    ***/
-
 int		ft_checksorted(t_node *stack_a);
 void	ft_sort(t_node **stack_a);
 void	ft_sort_three(t_node **stack_a);
-//int		ft_rotate_type_ab(t_stack *a, t_stack *b);
+int		ft_case_rarb(t_node *a, t_node *b, int c);
+int		ft_case_rrarrb(t_node *a, t_node *b, int c);
+int		ft_case_rrarb(t_node *a, t_node *b, int c);
+int		ft_case_rarrb(t_node *a, t_node *b, int c);
+int		ft_case_rarb_a(t_node *a, t_node *b, int c);
+int		ft_case_rrarrb_a(t_node *a, t_node *b, int c);
+int		ft_case_rarrb_a(t_node *a, t_node *b, int c);
+int		ft_case_rrarb_a(t_node *a, t_node *b, int c);
+int		ft_rotate_type_ab(t_node *a, t_node *b);
+int		ft_rotate_type_ba(t_node *a, t_node *b);
+int		ft_apply_rarb(t_node **a, t_node **b, int c, char s);
+int		ft_apply_rrarrb(t_node **a, t_node **b, int c, char s);
+int		ft_apply_rrarb(t_node **a, t_node **b, int c, char s);
+int		ft_apply_rarrb(t_node **a, t_node **b, int c, char s);
 
 /***      STACK    ***/
 int		ft_pop(t_node **root);
@@ -51,13 +55,16 @@ void	ft_print_two_stack(t_node *st_a, t_node *st_b);
 int		peek(t_node *root);
 int		check(t_node *stack, int num);
 int		ft_stack_size(t_node *stack);
+t_node	*ft_get_first_node(t_node *stack);
 
-void	init_stack(t_node **stack_a, char **argv, int argc);
 /***      UTILS    ***/
 void	ft_error(void);
-int	ft_max(t_node *a);
-int	ft_min(t_node *a);
-int	ft_find_index(t_node *a, int nbr);
+int		ft_max(t_node *a);
+int		ft_min(t_node *a);
+int		ft_find_index(t_node *a, int nbr);
+int		ft_find_place_a(t_node *stack_a, int nbr_push);
+int		ft_find_place_b(t_node *stack_b, int nbr_push);
+
 /***      RULES    ***/
 void	rule_sa(t_node **stack_a);
 void	rule_sb(t_node **stack_b);
